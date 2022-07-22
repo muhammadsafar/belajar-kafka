@@ -1,0 +1,64 @@
+KAFKA is a Message Broker for 
+
+====Publish and Subscribe====
+
+by. Programmer Zaman Now
+
+producer : pengirim
+consumer : penerima
+
+sebuah aplikasi bisa bertindak sebagai producer maupun consumer secara sekaligus
+
+
+1. Arsitektr Kafka
+
+a. producer
+b. consumer
+c. connectors : integrasi dengan exsisitng data
+d. stream processor
+
+
+cluster: kumpulan beberapa aplikasi kafka
+
+
+zookeeper: 
+
+
+2. Topic: seperti tabel jika di DB
+
+data dalam topic tidak bisa diupdate, topic seperti data sementara yang bersifat log / event
+
+
+3. Topic Partition
+
+Potogan sebuah topic, menjadi lebih kecil
+
+# 1 partisi cuma bisa di consume 1 aplikasi
+
+untuk mengambil datanya sesuai partisi dengan routing key
+
+offset adalah posisi terkahir consumer ngeconsume data. 
+
+
+tujuan untuk tahu offsetnya, supaya ketika re-run gak pelu ulang dari 0 lagi
+
+
+4. Replication
+
+menduplikasi data partisi yang ada, (seperti backup)
+
+
+5. Consumer Group
+
+mengrouping jenis aplikasi  yg sama, kalau ada dua (2) jenis consumer yang sama, maka akan digroup dalam satu(1) consumer grup yang sama, 
+
+
+6. Retention Policy
+
+untuk menghilangkan data dari Topic
+
+- Log retention time: jeda waktu untuk mengkeep data dalam topic, biasanya by default 7 hari (bisa dicustom juga) 
+
+- Log retention bytes: berapa maximum ukuran partisi yang di siapkan untuk data, jika sudah mencapai maximal data lama akan dihapus 
+
+- Offset retention time: seberapa lama data offset disimpan di kafka,  jika dalam waktu tertentu data ofsetnya di berubah artinya consumernya tidak aktif maka data akan didelete, by default 1 hari. kafka terbaru 1 minggu
