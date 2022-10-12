@@ -62,3 +62,19 @@ untuk menghilangkan data dari Topic
 - Log retention bytes: berapa maximum ukuran partisi yang di siapkan untuk data, jika sudah mencapai maximal data lama akan dihapus 
 
 - Offset retention time: seberapa lama data offset disimpan di kafka,  jika dalam waktu tertentu data ofsetnya di berubah artinya consumernya tidak aktif maka data akan didelete, by default 1 hari. kafka terbaru 1 minggu
+
+
+
+
+====================
+
+1. download kafka
+
+2. edit zookeper.properties
+ a. directory 
+ b. maxClient 0
+
+3. edit server.properties
+ a. log.dirs=data/kafka 
+ 
+
