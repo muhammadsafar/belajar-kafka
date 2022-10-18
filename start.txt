@@ -19,3 +19,11 @@ start zookeeper :2181
 start kafka server :9092
 .bin\windows\kafka-server-start.bat .\config\server.properties
 
+if myborker not available try:
+Change:
+
+#listeners=PLAINTEXT://:9092`
+in server.properties to:
+
+listeners=PLAINTEXT://localhost:9092
+
