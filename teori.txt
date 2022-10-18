@@ -75,6 +75,6 @@ untuk menghilangkan data dari Topic
  b. maxClient 0
 
 3. edit server.properties
- a. log.dirs=data/kafka 
+ a. log.dirs=data/kafka -> c:/kafka/kafka-logs
  
 
